@@ -48,11 +48,12 @@ public class BarberShop extends javax.swing.JFrame {
     public void work(){
         while(numCustomers > 0){
             
+        if(numSeats == seatsAvailable)
+                    barberStatus.setText("Barber Status: sleep");
         
             try{
                 customerSem.acquire();
-                if(numSeats == seatsAvailable)
-                    barberStatus.setText("Barber Status: sleep");
+                
                 seatsSem.release();
                 barberSem.release();
                 seatsSem.release();
@@ -96,7 +97,7 @@ public class BarberShop extends javax.swing.JFrame {
         customersInShop--;
         // customer is done, and leaves
         customerStatus = false;
-        customersPresentLabel.setText("Customers present: " + numCustomers);
+        customersPresentLabel.setText("Customers present: " + customersInShop);
     }
     
     public void enterBarberShop(){
@@ -106,7 +107,7 @@ public class BarberShop extends javax.swing.JFrame {
         else{
             seatsSem.release();
             textArea.append("\nNo seat for: "+ customerNum);
-            customerStatus = false;
+            leave();
         }
     }
     
@@ -258,7 +259,7 @@ public class BarberShop extends javax.swing.JFrame {
             
             Customer customer = new Customer(i);
             customer.start();
-            customersPresentLabel.setText("Customers present: " + numCustomers);
+            //customersPresentLabel.setText("Customers present: " + numCustomers);
             i++;
             try {
                 sleep(100);
