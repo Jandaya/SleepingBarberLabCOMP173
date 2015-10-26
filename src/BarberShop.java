@@ -261,9 +261,10 @@ public class BarberShop extends javax.swing.JFrame {
             customer.start();
             //customersPresentLabel.setText("Customers present: " + numCustomers);
             i++;
+            
             try {
                 sleep(100);
-              } catch(InterruptedException ex) {};
+            } catch(InterruptedException ex) {};
         }
         
     }
