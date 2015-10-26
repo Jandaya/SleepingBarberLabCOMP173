@@ -29,14 +29,23 @@
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="openShopButton" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="numCustomersLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="numCustomersField" min="-2" pref="112" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
                       <Component id="numSeatsLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="numSeatsField" min="-2" pref="112" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="numCustomersLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="sleepLabel" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="errorLabel" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="numCustomersField" pref="112" max="32767" attributes="0"/>
+                              <Component id="sleepField" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -61,7 +70,14 @@
               <Component id="seatsAvailableLabel" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="customersPresentLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="62" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="errorLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="sleepLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="sleepField" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="numCustomersField" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="numCustomersLabel" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -137,6 +153,21 @@
     <Component class="javax.swing.JLabel" name="customersPresentLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Customers Present: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="sleepLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Enter barber efficiency (seconds): "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="sleepField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="errorLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Positive numbers only!"/>
       </Properties>
     </Component>
   </SubComponents>
