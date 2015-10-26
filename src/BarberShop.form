@@ -23,9 +23,9 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
+          <Component id="jScrollPane1" alignment="0" pref="547" max="32767" attributes="0"/>
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="86" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="openShopButton" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
@@ -33,20 +33,35 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="numCustomersField" min="-2" pref="112" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
                       <Component id="numSeatsLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="numSeatsField" min="-2" pref="112" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="barberStatus" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="seatsAvailableLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="customersPresentLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="barberStatus" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="seatsAvailableLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="customersPresentLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="62" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="numCustomersField" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="numCustomersLabel" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -58,19 +73,26 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="openShopButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="38" max="32767" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" pref="140" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="185" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JTextField" name="numCustomersField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="10"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="openShopButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Open Shop!"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="openShopButtonActionPerformed"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>
@@ -79,7 +101,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTextArea" name="jTextArea1">
+        <Component class="javax.swing.JTextArea" name="textArea">
           <Properties>
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
@@ -93,10 +115,28 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="numSeatsField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="5"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="numSeatsLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Enter Number of Seats"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="barberStatus">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Barber Status: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="seatsAvailableLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Number of Seats Available:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="customersPresentLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Customers Present: "/>
       </Properties>
     </Component>
   </SubComponents>
