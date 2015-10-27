@@ -20,6 +20,7 @@ public class BarberShop extends javax.swing.JFrame {
     private Customer customer = new Customer();
     private Semaphore barberSeatSem = new Semaphore(0);
     private Semaphore waitingSeatSem = new Semaphore(0);
+    private int counter = 0;
     
     public BarberShop() {
         initComponents();
@@ -162,6 +163,7 @@ public class BarberShop extends javax.swing.JFrame {
         sleepLabel = new javax.swing.JLabel();
         sleepField = new javax.swing.JTextField();
         errorLabel = new javax.swing.JLabel();
+        customerButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -197,6 +199,13 @@ public class BarberShop extends javax.swing.JFrame {
 
         errorLabel.setText("Positive numbers only!");
 
+        customerButton.setText("Create customer");
+        customerButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                customerButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -205,11 +214,6 @@ public class BarberShop extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(openShopButton)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(numSeatsLabel)
-                        .addGap(18, 18, 18)
-                        .addComponent(numSeatsField, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(numCustomersLabel)
@@ -218,7 +222,15 @@ public class BarberShop extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(numCustomersField, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
-                            .addComponent(sleepField))))
+                            .addComponent(sleepField)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(customerButton)
+                            .addComponent(numSeatsLabel))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(numSeatsField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(openShopButton, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
@@ -240,9 +252,9 @@ public class BarberShop extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(errorLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(sleepLabel)
-                    .addComponent(sleepField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(sleepField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sleepLabel))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(numCustomersField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -252,7 +264,9 @@ public class BarberShop extends javax.swing.JFrame {
                     .addComponent(numSeatsField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(numSeatsLabel))
                 .addGap(18, 18, 18)
-                .addComponent(openShopButton)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(openShopButton)
+                    .addComponent(customerButton))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -277,6 +291,15 @@ public class BarberShop extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_openShopButtonActionPerformed
 
+    private void customerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customerButtonActionPerformed
+        // TODO add your handling code here:
+        counter++;
+        customersInShop++;
+        customersPresentLabel.setText("Customers present: " + customersInShop);
+        Customer c = new Customer(counter);
+        c.start();
+    }//GEN-LAST:event_customerButtonActionPerformed
+
     // uses input from user for how long to sleep
     public void suspendSleep(){
         try {
@@ -295,6 +318,7 @@ public class BarberShop extends javax.swing.JFrame {
             Customer customer = new Customer(i);
             customer.start();
             i++;
+            counter++;
         }
         
     }
@@ -333,6 +357,7 @@ public class BarberShop extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel barberStatus;
+    private javax.swing.JButton customerButton;
     private javax.swing.JLabel customersPresentLabel;
     private javax.swing.JLabel errorLabel;
     private javax.swing.JScrollPane jScrollPane1;

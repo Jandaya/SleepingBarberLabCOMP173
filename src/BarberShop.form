@@ -27,12 +27,6 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="openShopButton" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="numSeatsLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="numSeatsField" min="-2" pref="112" max="-2" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="numCustomersLabel" min="-2" max="-2" attributes="0"/>
@@ -43,6 +37,17 @@
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="numCustomersField" pref="112" max="32767" attributes="0"/>
                           <Component id="sleepField" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="customerButton" min="-2" max="-2" attributes="0"/>
+                          <Component id="numSeatsLabel" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="numSeatsField" alignment="1" min="-2" pref="112" max="-2" attributes="0"/>
+                          <Component id="openShopButton" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -71,9 +76,9 @@
               <EmptySpace max="32767" attributes="0"/>
               <Component id="errorLabel" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="sleepLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="sleepField" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="sleepLabel" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -86,7 +91,10 @@
                   <Component id="numSeatsLabel" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="openShopButton" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="openShopButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="customerButton" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="185" max="-2" attributes="0"/>
           </Group>
@@ -167,6 +175,14 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Positive numbers only!"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="customerButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Create customer"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="customerButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
