@@ -96,8 +96,7 @@ public class BarberShop extends javax.swing.JFrame {
         textArea.append("\nCustomer: " + customerNum + " is done.");
         // when customer leaves decrement
         customersInShop--;
-        // customer is done, and leaves
-        customerStatus = 1;
+        
         // update number of customers present on GUI
         customersPresentLabel.setText("Customers present: " + customersInShop);
         
@@ -143,9 +142,7 @@ public class BarberShop extends javax.swing.JFrame {
     
     public void run(){
         // when a customer needs a haircut
-        while(customerStatus <= 0){
             enterBarberShop();
-        }
     }
 }
     @SuppressWarnings("unchecked")
@@ -216,13 +213,12 @@ public class BarberShop extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(numCustomersLabel)
-                            .addComponent(sleepLabel))
+                            .addComponent(sleepLabel)
+                            .addComponent(errorLabel))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(errorLabel)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(numCustomersField, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
-                                .addComponent(sleepField)))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(numCustomersField, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+                            .addComponent(sleepField))))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()

@@ -37,14 +37,12 @@
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="numCustomersLabel" min="-2" max="-2" attributes="0"/>
                           <Component id="sleepLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="errorLabel" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="errorLabel" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="numCustomersField" pref="112" max="32767" attributes="0"/>
-                              <Component id="sleepField" max="32767" attributes="0"/>
-                          </Group>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="numCustomersField" pref="112" max="32767" attributes="0"/>
+                          <Component id="sleepField" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
